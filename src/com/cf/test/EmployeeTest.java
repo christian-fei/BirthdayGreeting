@@ -16,7 +16,7 @@ public class EmployeeTest {
 	@Test
 	public void testBornOnSpecificDate() {
 		assertEquals(true,true);
-		Employee employee = new Employee("Christian Fei", 7, 1);
+		Employee employee = new Employee("Christian Fei", "test@gmail.com", 7, 1);
 		assertTrue( employee.bornOn(7,1) );
 	}
 

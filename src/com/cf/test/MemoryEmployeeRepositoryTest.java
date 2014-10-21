@@ -20,8 +20,8 @@ public class MemoryEmployeeRepositoryTest {
 	@Before
 	public void setUp() throws Exception {
 		employeeRepository = new MemoryEmployeeRepository();
-		employee1 = new Employee("Christian Fei", 7, 1);
-		employee2 = new Employee("Test Test", 31, 12);
+		employee1 = new Employee("Christian Fei", "test@gmail.com", 7, 1);
+		employee2 = new Employee("Test Test", "test@gmail.com", 31, 12);
 		employeeRepository.add(employee1);
 		employeeRepository.add(employee2);
 	}
@@ -29,7 +29,13 @@ public class MemoryEmployeeRepositoryTest {
 	@Test
 	public void testFindsEmployeeByDayAndMonth() {
 		ArrayList<Employee> employees = employeeRepository.findEmployeesBornOn(7, 1);
-		assertEquals(employees, new ArrayList<Employee>());
+		assertEquals(employees, new ArrayList<Employee>(){{
+			add(employee1);
+		}});
+		employees = employeeRepository.findEmployeesBornOn(31, 12);
+		assertEquals(employees, new ArrayList<Employee>(){{
+			add(employee2);
+		}});
 	}
 
 }

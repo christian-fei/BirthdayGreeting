@@ -3,13 +3,15 @@ package com.cf.app;
 public class Employee {
 
 	private String name;
+	private String email;
 	private int dayOfBirth;
 	private int monthOfBirth;
 
-	public Employee(String name, int dayOfBirth, int monthOfBirth) {
+	public Employee(String name, String email, int dayOfBirth, int monthOfBirth) {
 		this.name = name;
+		this.email = email;
 		this.dayOfBirth = dayOfBirth;
-		this.dayOfBirth = monthOfBirth;
+		this.monthOfBirth = monthOfBirth;
 	}
 
 	public String getName() {
