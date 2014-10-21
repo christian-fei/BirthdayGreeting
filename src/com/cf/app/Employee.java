@@ -40,8 +40,6 @@ public class Employee {
 
 	public boolean bornOn(int dayOfBirth, int monthOfBirth) {
 		return dayOfBirth==this.dayOfBirth && monthOfBirth==this.monthOfBirth;
-		// TODO Auto-generated method stub
-		
 	}
 
 }
