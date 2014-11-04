@@ -7,7 +7,6 @@ import java.util.ArrayList;
 
 public class FileEmployeeRepository implements EmployeeRepository {
 
-	private EmployeeFinder employeeFinder = new EmployeeFinder(new ArrayList<Employee>());
 	private ArrayList<Employee> employees = new ArrayList<Employee>();
 
 	public void loadFromFile(String fileLocation) throws NumberFormatException, IOException {
@@ -25,7 +24,12 @@ public class FileEmployeeRepository implements EmployeeRepository {
 
 	@Override
 	public ArrayList<Employee> findEmployeesBornOn(int day, int month) {
-		return employeeFinder.findEmployeesBornOn(day, month);
+		ArrayList<Employee> employeesBornOn = new ArrayList<Employee>();
+		for (Employee employee : this.employees) {
+			if( employee.bornOn(day,month) )
+				employeesBornOn.add(employee);
+		}
+		return employeesBornOn;
 	}
 
 	@Override
