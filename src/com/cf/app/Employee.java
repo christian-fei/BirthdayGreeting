@@ -9,7 +9,7 @@ public class Employee {
 
 	public Employee(String name, String email, int dayOfBirth, int monthOfBirth) {
 		this.name = name;
-		this.email = email;
+		this.setEmail(email);
 		this.dayOfBirth = dayOfBirth;
 		this.monthOfBirth = monthOfBirth;
 	}
@@ -40,6 +40,14 @@ public class Employee {
 
 	public boolean bornOn(int dayOfBirth, int monthOfBirth) {
 		return dayOfBirth==this.dayOfBirth && monthOfBirth==this.monthOfBirth;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }
